@@ -1,8 +1,27 @@
 # READme-Generator
 
+## Purpose-
+
+To generate a README.md file with relevant information related to the user's project.
+
+## Built with
+
+JavaScript
+NODE.js
+NPM Inquirer Package
+
+## Website
+
+https://github.com/GelP1987/READme-Generator
+
+## Contribution
+
+Made with ❤️ by Phil Gelin
+
+<!-- Challenge Info: Week 9
 # Professional README Generator Starter Code
 
-[How to create a Professional README](https://coding-boot-camp.github.io/full-stack/github/professional-readme-guide)
+[How to create a Professional README](https://coding-boot-camp.github.io/full-stack/github/professional-readme-guide) -->
 
 <!-- AS A developer
 I WANT a README generator
