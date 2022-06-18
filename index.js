@@ -20,7 +20,7 @@ const questions = [
 
      {
      type: 'input',
-     name: 'Description',
+     name: 'description',
      message: 'Describe your project',
      validate: descriptionInput => {
        if (descriptionInput) {
@@ -30,20 +30,6 @@ const questions = [
          return false;
        }
      }
-   },
-
-   {
-    type: 'input',
-    name: 'Table Of Contents',
-    message: 'Table Of Contents',
-    validate: contentsInput => {
-      if (contentsInput) {
-        return true;
-      } else {
-        console.log('Please enter your Table of Contents');
-        return false;
-      }
-    }
    },
 
    {
@@ -92,11 +78,11 @@ const questions = [
     type: 'input',
     name: 'Tests',
     message: 'Describe Tests',
-    validate: testInput => {
-      if (testInput) {
+    validate: testsInput => {
+      if (testsInput) {
         return true;
       } else {
-        console.log('Please enter your test info!');
+        console.log('Please enter your tests info!');
         return false;
       }
     }
@@ -117,9 +103,16 @@ const questions = [
    },   
 
 {
-type: 'input',
+type: 'list',
 name: 'license',
 message: 'Please share license(s)!',
+choices: [
+    "MIT",
+    "APACHE",
+    "GPL",
+    "BSD",
+    "None"
+],
 validate: licenseInput => {
   if (licenseInput) {
     return true;
@@ -132,19 +125,34 @@ validate: licenseInput => {
 
 {
     type: 'input',
-    name: 'questions',
-    message: 'Please share questions!',
-    validate: questionsInput => {
-      if (questionsInput) {
+    name: 'questions1',
+    message: 'Please email for questions!',
+    validate: questions1Input => {
+      if (questions1Input) {
         return true;
       } else {
-        console.log('Please share questions!');
+        console.log('Please share email!');
+        return false;
+      }
+    }
+    },
+
+ {
+    type: 'input',
+    name: 'questions2',
+    message: 'Share github for questions!',
+    validate: questions2Input => {
+      if (questions2Input) {
+        return true;
+      } else {
+        console.log('Please share github!');
         return false;
       }
     }
     },
 
  ];
+
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, error => {
         if (error)
@@ -158,7 +166,7 @@ function init() {
     .then(answers => {
         const readmeContent = generateMarkdown(answers);
 
-        writeToFile('.dist/README.md', readmeContent);
+        writeToFile('./dist/README.md', readmeContent);
     })
 .catch(error => {
     console.log(error);
