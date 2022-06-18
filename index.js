@@ -1,10 +1,11 @@
-// TODO: Include packages needed for this application
+// Packages needed for this application
 const generateMarkdown = require('./utils/generateMarkdown.js')
 const fs = require('fs');
 const inquirer = require('inquirer');
-// TODO: Create an array of questions for user input
+// Creates an array of questions for user input
 const questions = [
          {
+            // user input for generating Project Title in the README
             type: 'input',
             name: 'title',
             message: 'What is your project title?',
@@ -19,6 +20,7 @@ const questions = [
      },
 
      {
+        // user input for generating Description of the project in the README
      type: 'input',
      name: 'description',
      message: 'Describe your project',
@@ -33,6 +35,7 @@ const questions = [
    },
 
    {
+     // user input for generating install instructions project in the README
    type: 'input',
    name: 'install',
    message: 'Please explain your installation process',
@@ -47,6 +50,7 @@ const questions = [
  },
 
  {
+     // user input for generating usage information for the project in the README
  type: 'input',
  name: 'usage',
  message: 'Describe Usage',
@@ -61,48 +65,37 @@ const questions = [
 },
 
 {
+    // user input for generating contribution information for the project in the README
     type: 'input',
-    name: 'Contribution',
-    message: 'Contribution',
-    validate: contributionInput => {
-      if (contributionInput) {
+    name: 'contributing',
+    message: 'Contributing',
+    validate: contributingInput => {
+      if (contributingInput) {
         return true;
       } else {
-        console.log('Please enter Contributions');
+        console.log('Please enter Contributors');
         return false;
       }
     }
    },
 
 {
+     // user input for generating testing information of the project in the README
     type: 'input',
-    name: 'Tests',
-    message: 'Describe Tests',
-    validate: testsInput => {
-      if (testsInput) {
+    name: 'testing',
+    message: 'Describe Testing',
+    validate: testingInput => {
+      if (testingInput) {
         return true;
       } else {
-        console.log('Please enter your tests info!');
+        console.log('Please enter your testing info!');
         return false;
       }
     }
    },
 
-   {
-    type: 'input',
-    name: 'usage',
-    message: 'Describe Usage',
-    validate: usageInput => {
-      if (usageInput) {
-        return true;
-      } else {
-        console.log('Please enter your usage info!');
-        return false;
-      }
-    }
-   },   
-
 {
+     // user input for generating license information of the project in the README
 type: 'list',
 name: 'license',
 message: 'Please share license(s)!',
@@ -124,6 +117,7 @@ validate: licenseInput => {
 },
 
 {
+    // user input for generating email that can be used to contact the generator with questions in the README
     type: 'input',
     name: 'questions1',
     message: 'Please email for questions!',
@@ -138,6 +132,7 @@ validate: licenseInput => {
     },
 
  {
+    // user input for generating github user link for the generator of the project in the README
     type: 'input',
     name: 'questions2',
     message: 'Share github for questions!',
@@ -160,7 +155,7 @@ function writeToFile(fileName, data) {
     });
 }
 
-// TODO: Create a function to initialize app
+//Function to initialize app
 function init() {
     inquirer.prompt(questions)
     .then(answers => {

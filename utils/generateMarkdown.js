@@ -1,8 +1,4 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
-function renderLicenseBadge(license) {}
-
-// TODO: Create a function that returns the license link
+// function that creates a license badge or allows user to choose not to include one
 function renderLicenseBadge(license) {
   if (license === 'None') {
     return '';
@@ -10,17 +6,15 @@ function renderLicenseBadge(license) {
 
   return `![License Badge](https://img.shields.io/badge/License-${license}-blueviolet)`;
 }
-// If there is no license, return an empty string
+// function that creates a link for generated license or leaves it blank
 function renderLicenseLink(license) {
   if (license === 'None') {
     return '';
   }
 
-  return '-[License](#license)';
+  return '- [License](#license)';
 }
-
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
+// function that constructs the license section based on user input or leaves it blank
 function renderLicenseSection(license) {
   if (license === 'None') {
     return '';
@@ -28,10 +22,11 @@ function renderLicenseSection(license) {
 
     return `## License
     
-    This project is licensed under the ${license} license.`;
-}
+This project is licensed under the ${license} license. 
 
-// TODO: Create a function to generate markdown for README
+  `
+}
+// function that generates dynamically generated markdown based on user input that is displayed in the README we're creating
 function generateMarkdown(data) {
   return `# ${data.title}
   ${renderLicenseBadge(data.license)}
@@ -46,29 +41,30 @@ function generateMarkdown(data) {
   - [Contribution](#contribution)
   - [Questions](#questions)
   - [Tests](#tests)
-  - [License](#license)
 
+  ${renderLicenseLink(data.license)}
+  
   ## Installation
   ${data.install}
 
   ## Usage
   ${data.usage}
+  
+  ${renderLicenseSection(data.license)}
 
-  ## Contribution
-  ${data.contibution}
+  ## Contributing
+  ${data.contributing}
 
   ## Questions
-  ${data.questions1}
-  ${data.questions2}
+  Contact me at ${data.questions1} with any questions
 
-  ## Tests
-  ${data.tests}
+  Check out my GitHub at https://github.com/${data.questions2}
 
-  ## License
-  ${data.license}
+  ## Testing
+  ${data.testing}
 
-${renderLicenseLink(data.license)}
   `;
+
 }
 
 module.exports = generateMarkdown;
