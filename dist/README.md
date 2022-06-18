@@ -1,24 +1,24 @@
-# TEST: This is where I would Include my Project Title
+# Test: This is where we'd enter our Project title
   ![License Badge](https://img.shields.io/badge/License-MIT-blueviolet)
   
   ## Description
   
-  Test: This is where i would include a deatiled description of my Project
+  Test: This is where we'd enter a deatiled description of our project
   
   ## Table of Contents
   - [Installation](#installation)
   - [Usage](#usage)
-  - [Contribution](#contribution)
+  - [Contributing](#contributing)
   - [Questions](#questions)
-  - [Tests](#tests)
+  - [Testing](#testing)
 
   - [License](#license)
   
   ## Installation
-  Test: This is where i would include relevant installation information related to the project
+  Test: This is where we'd enter installation requirements for the project
 
   ## Usage
-  Test: This is where I would share how the application is intended to be used
+  Test: This is where we'd explain intended usage of the project
   
   ## License
     
@@ -27,7 +27,7 @@ This project is licensed under the MIT license.
   
 
   ## Contributing
-  Test: This is where I would include contribution information
+  Test; this is where we'd share contribution information
 
   ## Questions
   Contact me at andy.gelin@gmail.com with any questions
@@ -35,6 +35,6 @@ This project is licensed under the MIT license.
   Check out my GitHub at https://github.com/GelP1987
 
   ## Testing
-  Test: This is where i would share relevant testing information
+  Test: This is where we'd describe relevant testing for the project
 
   
