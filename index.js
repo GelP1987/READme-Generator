@@ -3,8 +3,7 @@ const generateMarkdown = require('./utils/generateMarkdown.js')
 const fs = require('fs');
 const inquirer = require('inquirer');
 // TODO: Create an array of questions for user input
-const questions = () => {
-        return inquirer.prompt ([
+const questions = [
          {
             type: 'input',
             name: 'title',
@@ -145,8 +144,7 @@ validate: licenseInput => {
     }
     },
 
- ]);
-};
+ ];
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, error => {
         if (error)
@@ -158,7 +156,7 @@ function writeToFile(fileName, data) {
 function init() {
     inquirer.prompt(questions)
     .then(answers => {
-        const readmeContent m= generateMarkdown(answers);
+        const readmeContent = generateMarkdown(answers);
 
         writeToFile('.dist/README.md', readmeContent);
     })
