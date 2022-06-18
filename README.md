@@ -13,6 +13,7 @@ NPM Inquirer Package
 ## Website
 
 https://github.com/GelP1987/READme-Generator
+![Screencapture of README Generator.](READMEgeneratorScreenshot.png)
 
 ## Contribution
 
