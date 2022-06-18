@@ -147,13 +147,24 @@ validate: licenseInput => {
 
  ]);
 };
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data, error => {
+        if (error)
+        console.log(error);
+    });
+}
 
 // TODO: Create a function to initialize app
 function init() {
-    questions()
+    inquirer.prompt(questions)
+    .then(answers => {
+        const readmeContent m= generateMarkdown(answers);
 
+        writeToFile('.dist/README.md', readmeContent);
+    })
+.catch(error => {
+    console.log(error);
+});
 }
 
 // Function call to initialize app
